@@ -19,4 +19,4 @@ EXPOSE 7860
 
 # Command to run the application
 # We use uvicorn to serve the FastAPI app. Port 7860 as expected by HF.
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]

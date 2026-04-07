@@ -38,3 +38,13 @@ async def list_tasks():
 @app.get("/")
 async def root():
     return {"status": "online", "env": "SupportAgentEnv"}
+
+def main():
+    import uvicorn
+    import os
+    # Default to 7860 for Hugging Face or 8000 for local
+    port = int(os.getenv("PORT", 7860))
+    uvicorn.run("server.app:app", host="0.0.0.0", port=port)
+
+if __name__ == "__main__":
+    main()

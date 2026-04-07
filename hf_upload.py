@@ -22,12 +22,13 @@ def deploy_to_hf(repo_name: str, token: str):
 
     # Upload specific files and folders to avoid bloat
     patterns = [
-        "app/**",
+        "server/**",
         "Dockerfile",
         "README.md",
         "openenv.yaml",
         "requirements.txt",
         "pyproject.toml",
+        "uv.lock",
         "hf_upload.py",
         "inference.py"
     ]
