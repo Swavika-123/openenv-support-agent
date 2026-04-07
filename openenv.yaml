@@ -1,0 +1,33 @@
+name: support-agent-env
+version: "0.1.0"
+description: "A real-world environment for AI Customer Support Agents. Simulate ticket resolution, CRM lookups, and customer interactions."
+author: "Antigravity"
+tags: ["openenv", "customer-support", "agentic", "real-world"]
+task_ids:
+  - id: "refund-request"
+    name: "Refund Eligibility Check"
+    difficulty: "Easy"
+  - id: "tech-troubleshoot"
+    name: "Technical Troubleshooting"
+    difficulty: "Medium"
+  - id: "complex-multi-ticket"
+    name: "Duplicate Ticket Resolution"
+    difficulty: "Hard"
+action_space:
+  type: "oneof"
+  actions:
+    - name: "ListTickets"
+      params: {}
+    - name: "GetTicketDetails"
+      params: { "ticket_id": "string" }
+    - name: "SearchCustomer"
+      params: { "email": "string" }
+    - name: "SendReply"
+      params: { "ticket_id": "string", "message": "string" }
+    - name: "EscalateTicket"
+      params: { "ticket_id": "string", "reason": "string" }
+    - name: "CloseTicket"
+      params: { "ticket_id": "string", "resolution": "string" }
+observation_space:
+  type: "textual_json"
+  description: "Returns a view string and structured data."
