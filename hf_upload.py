@@ -20,14 +20,25 @@ def deploy_to_hf(repo_name: str, token: str):
         print(f"Error creating/finding space: {e}")
         return
 
-    # Upload the entire directory
-    print(f"Uploading files to https://huggingface.co/spaces/{repo_name} ...")
+    # Upload specific files and folders to avoid bloat
+    patterns = [
+        "app/**",
+        "Dockerfile",
+        "README.md",
+        "openenv.yaml",
+        "requirements.txt",
+        "pyproject.toml",
+        "hf_upload.py",
+        "inference.py"
+    ]
+    
+    print(f"Uploading specific project files to https://huggingface.co/spaces/{repo_name} ...")
     api.upload_folder(
         folder_path=".",
         repo_id=repo_name,
         repo_type="space",
         path_in_repo=".",
-        ignore_patterns=["__pycache__", ".git", ".env"]
+        allow_patterns=patterns
     )
     print("Upload complete! The space will build and start automatically.")
 

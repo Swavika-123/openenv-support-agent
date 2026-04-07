@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "support-agent-env"
+version = "0.1.0"
+description = "A real-world environment for AI Customer Support Agents. Simulate ticket resolution, CRM lookups, and customer interactions."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Swarali Kangude" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "openai",
+    "python-dotenv",
+    "pyyaml",
+    "openenv-core",
+    "jinja2",
+    "requests",
+    "httpx",
+    "huggingface-hub"
+]
+
+[tool.setuptools]
+packages = ["app"]
