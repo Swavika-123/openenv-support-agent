@@ -1,3 +1,12 @@
+---
+title: OpenEnv Support Agent
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # OpenEnv: Support Agent Environment
 
 A production-grade OpenEnv implementation simulating a **Customer Support Representative** workstation. Agents must resolve customer tickets by querying a mock CRM, checking interaction history, and providing technical or policy-based resolutions.
